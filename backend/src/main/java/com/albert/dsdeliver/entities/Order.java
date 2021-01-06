@@ -42,13 +42,13 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus orderStatus, Double total) {
+    public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status, Double total) {
         this.id = id;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
         this.moment = moment;
-        this.status = orderStatus;
+        this.status = status;
         this.total = total;
     }
 
@@ -92,12 +92,12 @@ public class Order implements Serializable {
         this.moment = moment;
     }
 
-    public OrderStatus getOrderStatus() {
+    public OrderStatus getStatus() {
         return this.status;
     }
 
-    public void setOrderStatus(OrderStatus orderStatus) {
-        this.status = orderStatus;
+    public void setStatus(OrderStatus status) {
+        this.status = status;
     }
 
     public Double getTotal() {
@@ -136,7 +136,7 @@ public class Order implements Serializable {
             ", latitude='" + getLatitude() + "'" +
             ", longitude='" + getLongitude() + "'" +
             ", moment='" + getMoment() + "'" +
-            ", orderStatus='" + getOrderStatus() + "'" +
+            ", orderStatus='" + getStatus() + "'" +
             ", total='" + getTotal() + "'" +
             ", products='" + getProducts() + "'" +
             "}";
