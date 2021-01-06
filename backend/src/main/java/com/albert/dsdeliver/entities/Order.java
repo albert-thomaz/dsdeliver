@@ -29,7 +29,6 @@ public class Order implements Serializable {
     private Double longitude;
     private Instant moment;
     private OrderStatus status;
-    private Double total;
 
     @ManyToMany
     @JoinTable(
@@ -42,14 +41,13 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status, Double total) {
+    public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
         this.id = id;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
         this.moment = moment;
         this.status = status;
-        this.total = total;
     }
 
     public Long getId() {
@@ -100,14 +98,6 @@ public class Order implements Serializable {
         this.status = status;
     }
 
-    public Double getTotal() {
-        return this.total;
-    }
-
-    public void setTotal(Double total) {
-        this.total = total;
-    }
-
     public Set<Product> getProducts() {
         return this.products;
     }
@@ -127,19 +117,4 @@ public class Order implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", address='" + getAddress() + "'" +
-            ", latitude='" + getLatitude() + "'" +
-            ", longitude='" + getLongitude() + "'" +
-            ", moment='" + getMoment() + "'" +
-            ", orderStatus='" + getStatus() + "'" +
-            ", total='" + getTotal() + "'" +
-            ", products='" + getProducts() + "'" +
-            "}";
-    }
-
 }

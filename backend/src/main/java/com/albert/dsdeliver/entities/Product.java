@@ -90,15 +90,4 @@ public class Product implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", name='" + getName() + "'" +
-            ", price='" + getPrice() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", imageUri='" + getImageUri() + "'" +
-            "}";
-    }
 }
